@@ -3,9 +3,9 @@
 1. **Склонируйте репозиторий**  
    Выполните команду в терминале для клонирования проекта тестового задания:
    ```bash
-   git clone https://github.com/Vladislave00/...
+   git clone https://github.com/Vladislave00/ApiTestsPetstore
    ```
-   Или скачайте ZIP архив по [ссылке](https://github.com/Vladislave00/AvitoTesting/archive/refs/heads/master.zip) и распакуйте его.
+   Или скачайте ZIP архив по [ссылке](https://github.com/Vladislave00/ApiTestsPetstore/archive/refs/heads/master.zip) и распакуйте его.
 
 2. Откройте проект в любой IDE с поддержкой Maven (рекомендуется использовать IntelliJ IDEA).
 
