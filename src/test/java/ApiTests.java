@@ -22,7 +22,7 @@ public class ApiTests {
                     .build();
 
     @Test
-    public void getTest(){
+    public void getPetsByStatusTest(){
         List<PetInfo> list = given()
                 .when()
                 .spec(REQSP)
@@ -38,7 +38,7 @@ public class ApiTests {
     }
 
     @Test
-    public void postTest(){
+    public void postTestCreateUser(){
         UserInfo userInfo = new UserInfo();
         userInfo.setId(1234);
         userInfo.setFirstName("Vlad");
@@ -63,7 +63,7 @@ public class ApiTests {
         Assertions.assertEquals(200, response.getCode());
     }
     @Test
-    public void deleteTest(){
+    public void deleteUserTest(){
         given()
                 .spec(REQSP)
                 .basePath("/user/string")
@@ -74,7 +74,7 @@ public class ApiTests {
                 .log().all();
     }
     @Test
-    public void putTest(){
+    public void putUserTest(){
         UserInfo userInfo = new UserInfo();
         userInfo.setId(1234);
         userInfo.setFirstName("Vlad");
@@ -95,5 +95,24 @@ public class ApiTests {
                 .log().all()
                 .statusCode(200);
 
+    }
+    @Test
+    public void createPetPostTest(){
+        PetInfo pet = new PetInfo();
+        String name = "Radahn";
+        pet.setName(name);
+        String status = "available";
+        pet.setStatus(status);
+        PetInfo response = given()
+                .spec(REQSP)
+                .basePath("/pet")
+                .body(pet)
+                .when().post()
+                .then()
+                .log().all()
+                .statusCode(200)
+                .extract().as(PetInfo.class);
+        Assertions.assertEquals(name, response.getName());
+        Assertions.assertEquals(status, response.getStatus());
     }
 }

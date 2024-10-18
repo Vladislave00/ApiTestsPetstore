@@ -3,6 +3,7 @@ package pojos;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PetInfo {
@@ -15,6 +16,12 @@ public class PetInfo {
 
     // Конструктор по умолчанию
     public PetInfo() {
+        this.id = 0L; // Инициализация нулем
+        this.category = new Category(); // Инициализация null
+        this.name = ""; // Инициализация пустой строкой
+        this.photoUrls = new ArrayList<>(); // Инициализация пустым списком
+        this.tags = new ArrayList<Tag>(); // Инициализация пустым списком
+        this.status = ""; // Инициализация пустой строкой
     }
 
     // Конструктор с параметрами
@@ -88,6 +95,8 @@ public class PetInfo {
         private String name;
 
         public Category() {
+            this.id = 0; // Инициализация нулем
+            this.name = ""; // Инициализация пустой строкой
         }
 
         @JsonCreator
@@ -118,6 +127,8 @@ public class PetInfo {
         private String name;
 
         public Tag() {
+            this.id = 0;
+            this.name = "";
         }
 
         @JsonCreator

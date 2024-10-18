@@ -11,6 +11,7 @@ public class UserInfo {
     private int userStatus;
 
     public UserInfo() {
+
     }
 
     public UserInfo(int id, String username, String firstName, String lastName, String email, String password, String phone, int userStatus) {
